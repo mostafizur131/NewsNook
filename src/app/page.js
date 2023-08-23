@@ -1,5 +1,6 @@
 "use client";
 import Card from "@/components/Card";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
@@ -26,7 +27,9 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
             {data.map((post) => (
-              <Card key={post.id} post={post}></Card>
+              <Link href={`/blog/${post.id}`}>
+                <Card key={post.id} post={post}></Card>
+              </Link>
             ))}
           </div>
         </div>
